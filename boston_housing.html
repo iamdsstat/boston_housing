@@ -11770,15 +11770,19 @@ div#notebook {
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
-# Machine Learning Engineer Nanodegree
-## Model Evaluation & Validation
-## Project: Predicting Boston Housing Prices
 
-Welcome to the first project of the Machine Learning Engineer Nanodegree! In this notebook, some template code has already been provided for you, and you will need to implement additional functionality to successfully complete this project. You will not need to modify the included code beyond what is requested. Sections that begin with **'Implementation'** in the header indicate that the following block of code will require additional functionality which you must provide. Instructions will be provided for each section and the specifics of the implementation are marked in the code block with a 'TODO' statement. Please be sure to read the instructions carefully!
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Machine-Learning-Engineer-Nanodegree">Machine Learning Engineer Nanodegree<a class="anchor-link" href="#Machine-Learning-Engineer-Nanodegree">&#182;</a></h1><h2 id="Model-Evaluation-&amp;-Validation">Model Evaluation &amp; Validation<a class="anchor-link" href="#Model-Evaluation-&amp;-Validation">&#182;</a></h2><h2 id="Project:-Predicting-Boston-Housing-Prices">Project: Predicting Boston Housing Prices<a class="anchor-link" href="#Project:-Predicting-Boston-Housing-Prices">&#182;</a></h2><p>Welcome to the first project of the Machine Learning Engineer Nanodegree! In this notebook, some template code has already been provided for you, and you will need to implement additional functionality to successfully complete this project. You will not need to modify the included code beyond what is requested. Sections that begin with <strong>'Implementation'</strong> in the header indicate that the following block of code will require additional functionality which you must provide. Instructions will be provided for each section and the specifics of the implementation are marked in the code block with a 'TODO' statement. Please be sure to read the instructions carefully!</p>
+<p>In addition to implementing code, there will be questions that you must answer which relate to the project and your implementation. Each section where you will answer a question is preceded by a <strong>'Question X'</strong> header. Carefully read each question and provide thorough answers in the following text boxes that begin with <strong>'Answer:'</strong>. Your project submission will be evaluated based on your answers to each of the questions and the implementation you provide.</p>
+<blockquote><p><strong>Note:</strong> Code and Markdown cells can be executed using the <strong>Shift + Enter</strong> keyboard shortcut. In addition, Markdown cells can be edited by typically double-clicking the cell to enter edit mode.</p>
+</blockquote>
 
-In addition to implementing code, there will be questions that you must answer which relate to the project and your implementation. Each section where you will answer a question is preceded by a **'Question X'** header. Carefully read each question and provide thorough answers in the following text boxes that begin with **'Answer:'**. Your project submission will be evaluated based on your answers to each of the questions and the implementation you provide.  
-
->**Note:** Code and Markdown cells can be executed using the **Shift + Enter** keyboard shortcut. In addition, Markdown cells can be edited by typically double-clicking the cell to enter edit mode.
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12105,8 +12109,11 @@ Standard deviation of prices: $165171.13154429474
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong></p>
-<p>Yes. the R^2 of 0.923 is very high (larger than 0.9), meaning that over 92% of the variance in target variable can be explained/predicted from independent variables.</p>
+<p><strong>Answer:</strong>
+(REVISION)
+Yes. the R^2 of 0.923 is very high (larger than 0.9), meaning that over 92% of the variance in target variable can be explained/predicted from independent variables.</p>
+<p>R-squared is a statistical meansure of how close the data are to the fitted regression line. The more variance that is accounted for by the regression model, the closer the observed data points to the regression line. If a model could explain 100% of the variance, the fitted values will always be equal to the observed values, and thus the observed data points fall right in the fitted regression line.</p>
+<p>From another angle of view, R-squared = model sum-of-squares / total sum-of-squares = 1 - residual sum-of-square/total sum-of-squares. When model has a better goodness-of-fit, the recidual (distance between fitted response y-hat and observed respone y) is smaller, and so does the residual sum-of-squres. Because total sum-of-squares is constant regardless of X (total sum of square = model sum-of-squares + residual sum-of-squares), when resudual sum-of-squared is smaller, the model sum-of-squares is larger, so does the R-squared.</p>
 
 </div>
 </div>
@@ -12335,8 +12342,9 @@ Think about the pros and cons of adding more training points based on if the tra
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>With max depth of 1, the model suffers from high bias (underfitting), as model is not complex enough to capture the entire general trend. So it has relative low validation R^2 score.</p>
-<p>With max depth of 10, the model suffers from high variance (overfitting). As model is too complex, it includes too much noisces and cannot generalize well. So it has relative low validation R^2 score.</p>
+<p>(Revised)
+With max depth of 1, the model suffers from high bias (underfitting), as the training score and validation score are close (converges) but the training and testing scores are lows (i.e. training and testing errors are high). An underfitting (high bias) scenario occurs when training and testing errors converges but high (model cannot represent the underlying relationship and has high systematic errors).</p>
+<p>With max depth of 10, the model suffers from high variance (overfitting), as there is a large gap between training and testing errors (and scores). The training score is high because more is complicated to catch evey detail in training data, but it is also too complicated to generalize to unseen data, and thus the testing score is low.</p>
 
 </div>
 </div>
