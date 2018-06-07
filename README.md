@@ -1,3 +1,3 @@
 # boston_housing
-MLE nano-degree
+Udacity Machine Learning Engineer Nano-Degree
 Project 1. Boston Housing Price
